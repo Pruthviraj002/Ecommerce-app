@@ -1,10 +1,19 @@
 import express from 'express'
 import colors from 'colors'
 import dotenv from 'dotenv'
+import connectDB from './config/db.js'
+import morgan from 'morgan'
+
 
 dotenv.config()
 
+//db con
+connectDB()
+
 const app = express()
+
+app.use(express.json())
+app.use(morgan('dev'))
 
 app.get("/", (req, res) => {
     res.send("home")
