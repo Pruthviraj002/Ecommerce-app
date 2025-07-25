@@ -109,7 +109,10 @@ export const login = async (req, res) => {
             success: false,
             message: "error in login"
         })
-
-
     }
+}
+
+export const test = (req, res) => {
+    res.send('protected route');
+
 }
